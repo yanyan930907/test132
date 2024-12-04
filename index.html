@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我們的服飾店</title>
+    <style>
+        body{
+            background-color: rgb(244, 241, 238);
+        }
+        h2{
+            margin: 5px;
+            color:black;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        footer{
+            background-color: rgb(244, 241, 238);
+            border:3px rgb(158, 118, 138) dashed;
+            padding: 30px 20px 30px 40px;
+            margin:30px;
+        }
+        section{
+            background-color: rgb(244, 241, 238);
+            padding: 30px 20px 30px 40px;
+            margin:30px;
+        }
+        header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background-color: rgb(244, 241, 238);
+            height: 80px;
+            width: 100%;
+        }
+        h1{
+            color:rgba(100, 98, 98, 0.412);
+            position: absolute;
+            left: 4vw;
+            top: 1vw;
+        }
+        header a{
+            color:rgba(100, 98, 98, 0.412);
+            text-decoration:none;
+        }
+        header li{
+            display: inline;
+            margin-right: 5vw;
+        }
+        header a:hover, .first a:hover{
+            text-decoration: underline;
+        }
+        header ul{
+            position:absolute;
+            right:5vw;
+            top:3vw;
+        }
+
+        .first{
+            background-image:url("homebackground.webp");
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-position:center;
+            margin-top: 100px;
+            padding: 20px;
+            height: 300px;
+        }
+        .first a{
+            margin-top: 30px;
+            color:black;
+            text-decoration: none;
+            border:2px solid rgb(145, 101, 144);
+            padding:7px 20px;
+            border-radius: 5px;
+
+        }
+        .second{
+            color:black;
+            height:85vh;
+            display:flex;
+            flex-direction:row;
+            align-items: center;
+            justify-content:space-around;
+        }
+        
+        .message{
+            padding: 60px 0;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .message p{
+            margin-bottom: 20px;
+        }
+        .message input,.message button{
+            background-color: transparent;
+            color:rgb(20, 19, 19);
+            border:2px solid rgb(130, 120, 85);
+            padding:9px;
+            border-radius: 10px;
+        }
+        .message input{
+            width:200px;
+            margin-right: 20px;
+        }
+        .message button{
+            width: 80px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>想放個圖片</h1>
+    <nav>
+        <ul>
+        <li><strong><a href="file:///C:/Users/user/OneDrive/%E6%A1%8C%E9%9D%A2/%E7%B6%B2%E9%9A%9B/xiao.html">HOME</a></strong></li>
+        <li><strong><a href="file:///C:/Users/user/OneDrive/%E6%A1%8C%E9%9D%A2/%E7%B6%B2%E9%9A%9B/zhung.html">SHOP</a></strong></li>
+        <li><strong><a href="file:///C:/Users/user/OneDrive/%E6%A1%8C%E9%9D%A2/%E7%B6%B2%E9%9A%9B/wang.html">...</a></strong></li>
+        <li><strong><a href="file:///C:/Users/user/OneDrive/%E6%A1%8C%E9%9D%A2/%E7%B6%B2%E9%9A%9B/chen.html">...</a></strong></li>
+    </ul>
+    </nav>
+    </header>
+    <main>
+        <section class="first">
+            <h2>隨便挑的</h2>
+            <p><strong><a href="file:///C:/Users/user/OneDrive/%E6%A1%8C%E9%9D%A2/%E7%B6%B2%E9%9A%9B/kidding.html">了解更多</a></strong></p>
+        </section>
+        
+        <section class="second">
+            
+        </section>
+        <section class="message">
+            <p><strong>歡迎訂閱我們的電子報!!!  不定期會有好康呦!!!</strong></p>
+            <div>
+                <input type="email" placeholder="請輸入你的 Email" required>
+                <button type="submit" >送出</button>    
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>設計者:wei yan</p>
+    </footer>
+</body>
+</html>

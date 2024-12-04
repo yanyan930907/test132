@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products</title>
+    <style>
+        /* Basic Reset */
+        body, h1, p {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 36px;
+            color: #2c3e50;
+        }
+
+        /* Container for products */
+        .items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px auto;
+            padding: 10px;
+            max-width: 1200px;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styling each product item */
+        .item {
+            background-color: #fff;
+            border-radius: 8px;
+            margin: 15px;
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s ease;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .item:hover {
+            transform: scale(1.05);
+        }
+
+        img {
+            max-height: 300px;
+            max-width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+
+        p {
+            margin: 10px 0;
+            color: #34495e;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .items {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .item {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .item {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Our Products</h1>
+    <div class="items">
+        <!-- Product items dynamically added here -->
+    </div>
+
+    <script>
+        // Fetch data from net_products.json
+        fetch('net_products.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(products => {
+                const container = document.querySelector('.items');
+                products.forEach(product => {
+                    const item = document.createElement('div');
+                    item.className = 'item';
+
+                    item.innerHTML = `
+                        <img src="${product.image}" alt="${product.name}">
+                        <p>${product.name}</p>
+                        <p class="price">${product.price}</p>
+                    `;
+
+                    container.appendChild(item);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching the products:', error);
+            });
+    </script>
+</body>
+
+</html>
